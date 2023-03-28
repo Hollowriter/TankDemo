@@ -13,6 +13,7 @@ public class SphereSpawner : Singleton<SphereSpawner>
         {
             GameObject newSphere = GameObject.Instantiate(sphereToGenerate);
             newSphere.transform.position = spheresPositions[i];
+            newSphere.transform.parent = this.transform;
         }
     }
 
@@ -25,5 +26,37 @@ public class SphereSpawner : Singleton<SphereSpawner>
     private void Awake()
     {
         SingletonAwake();
+    }
+
+    public Transform GetSphereTransform(int index) 
+    {
+        if (this.transform.childCount != 0)
+        {
+            if (this.transform.GetChild(index).gameObject.activeInHierarchy)
+            {
+                return this.transform.GetChild(index);
+            }
+        }
+        return null;
+    }
+
+    public int GetSpheresCount() 
+    {
+        return this.transform.childCount;
+    }
+
+    public bool AreSpheresActive() 
+    {
+        if (this.transform.childCount != 0)
+        {
+            for (int i = 0; i < this.transform.childCount; i++)
+            {
+                if (this.transform.GetChild(i).gameObject.activeInHierarchy)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
