@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class SphereSpawner : Singleton<SphereSpawner>
 {
-    [SerializeField] private GameObject sphereToGenerate;
+    [SerializeField] private GameObject sphereBouncer;
+    [SerializeField] private GameObject sphereFollower;
     [SerializeField] private Vector3[] spheresPositions;
+
+    private SphereType GetRandomSphereType() 
+    {
+        return (SphereType)Random.Range(0, System.Enum.GetValues(typeof(SphereType)).Length);
+    }
 
     private void Generate() 
     {
         for (int i = 0; i < spheresPositions.Length && i < SpherePool.instance.GetSphereQuantity(); i++) 
         {
-            GameObject newSphere = GameObject.Instantiate(sphereToGenerate);
+            GameObject toInstatiate = null;
+            if (GetRandomSphereType() == SphereType.Bouncer)
+                toInstatiate = sphereBouncer;
+            else
+                toInstatiate = sphereFollower;
+            GameObject newSphere = GameObject.Instantiate(toInstatiate);
             newSphere.transform.position = spheresPositions[i];
             newSphere.transform.parent = this.transform;
         }

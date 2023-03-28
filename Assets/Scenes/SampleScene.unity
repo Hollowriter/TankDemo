@@ -796,7 +796,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cf91d748b037841857511d97ee65c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sphereToGenerate: {fileID: 7997108691968712965, guid: efd20e50ac064334c825dec8801cf645, type: 3}
+  sphereBouncer: {fileID: 7997108691968712965, guid: efd20e50ac064334c825dec8801cf645, type: 3}
+  sphereFollower: {fileID: 7997108691968712965, guid: ff8749e57d2228f4b9e42fe675a248fe, type: 3}
   spheresPositions:
   - {x: 3.38, y: 1.12, z: 6.65}
   - {x: -5.29, y: 1.12, z: 1.82}
