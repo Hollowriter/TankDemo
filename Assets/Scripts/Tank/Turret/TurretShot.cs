@@ -20,7 +20,7 @@ public class TurretShot : Singleton<TurretShot>
 
 	private void Shoot() 
 	{
-		if (!bullet.activeInHierarchy)
+		if (!bullet.activeInHierarchy && !TurretMovement.instance.IsRotating())
 		{
 			bullet.SetActive(true);
 			bullet.GetComponent<Bullet>().ResetLifeTime();

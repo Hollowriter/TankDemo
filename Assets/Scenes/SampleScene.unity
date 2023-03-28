@@ -229,6 +229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 601122373}
+  - component: {fileID: 601122374}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -255,6 +256,21 @@ Transform:
   m_Father: {fileID: 682617384}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &601122374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601122372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302c4fc7001a8fd4788043f026c241f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretSpeed: 2
+  limitAngleRotation: 1
+  target: {fileID: 7997108693533341353}
 --- !u!1 &663091410
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,3 +930,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd20e50ac064334c825dec8801cf645, type: 3}
+--- !u!1 &7997108693533341353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7997108691968712965, guid: efd20e50ac064334c825dec8801cf645, type: 3}
+  m_PrefabInstance: {fileID: 7997108693533341352}
+  m_PrefabAsset: {fileID: 0}
