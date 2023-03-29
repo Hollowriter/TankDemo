@@ -12,7 +12,7 @@ public class SphereFollower : Sphere
 
     private void Update()
     {
-        if (!PauseManager.instance.GetPaused())
+        if (!PauseManager.instance.GetPaused() && !GameOverManager.instance.GameOver())
             SphereBehaviour();
     }
 }

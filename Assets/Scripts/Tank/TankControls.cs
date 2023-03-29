@@ -19,7 +19,7 @@ public class TankControls : Singleton<TankControls>
 
 	private void ReadingControls()
 	{
-		if (!PauseManager.instance.GetPaused())
+		if (!PauseManager.instance.GetPaused() && !GameOverManager.instance.GameOver())
 		{
 			if (Input.GetKey(InputManager.instance.up))
 			{

@@ -22,6 +22,7 @@ public class UIPause : Singleton<UIPause>
         mainMenuButton.gameObject.SetActive(false);
         pauseButton.gameObject.SetActive(true);
         PauseManager.instance.Paused += PauseToggled;
+        GameOverManager.instance.Over += PauseGameOver;
     }
 
     private void Awake()
@@ -39,4 +40,13 @@ public class UIPause : Singleton<UIPause>
         pauseButton.gameObject.SetActive(!PauseManager.instance.GetPaused());
     }
 
+    private void PauseGameOver() 
+    {
+        pauseBackground.gameObject.SetActive(!GameOverManager.instance.GameOver());
+        pauseText.gameObject.SetActive(!GameOverManager.instance.GameOver());
+        resumeButton.gameObject.SetActive(!GameOverManager.instance.GameOver());
+        audioToggle.gameObject.SetActive(!GameOverManager.instance.GameOver());
+        mainMenuButton.gameObject.SetActive(!GameOverManager.instance.GameOver());
+        pauseButton.gameObject.SetActive(!GameOverManager.instance.GameOver());
+    }
 }

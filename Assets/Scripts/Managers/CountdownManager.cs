@@ -38,7 +38,7 @@ public class CountdownManager : Singleton<CountdownManager>
     private void EndGame() 
     {
         if (_timer <= 0)
-            Debug.Log("ENDGAME");
+            GameOverManager.instance.MakeTheGameOver();
     }
 
     public int GetTimer() 

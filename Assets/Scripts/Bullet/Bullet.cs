@@ -58,7 +58,7 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!PauseManager.instance.GetPaused())
+        if (!PauseManager.instance.GetPaused() && !GameOverManager.instance.GameOver())
             Move();
     }
 }
