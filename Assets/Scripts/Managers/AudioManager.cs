@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    private bool _audioOn;
+    private static bool _audioOn = true;
     [SerializeField] AudioClip select;
     [SerializeField] AudioClip shoot;
     [SerializeField] AudioClip score;
     [SerializeField] AudioSource source;
 
+    public delegate void OnAudioToggled();
+    public OnAudioToggled AudioToggled;
+
     protected override void SingletonAwake()
     {
         base.SingletonAwake();
-        _audioOn = true;
-        DontDestroyOnLoad(this);
     }
 
     private void Awake()
@@ -55,6 +56,7 @@ public class AudioManager : Singleton<AudioManager>
     public void ToggleAudio(bool audioOn) 
     {
         _audioOn = audioOn;
+        AudioToggled();
     }
 
     public bool GetAudioOn() 

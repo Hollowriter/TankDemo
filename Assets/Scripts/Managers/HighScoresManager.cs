@@ -27,7 +27,6 @@ public class HighScoresManager : Singleton<HighScoresManager>
 
     private void CheckForHighScore() 
     {
-        Debug.Log("CHUCHA");
         if (ScoreManager.instance.GetScore() > firstPlace) 
         {
             PlayerPrefs.SetInt("ThirdPlace", PlayerPrefs.GetInt("SecondPlace"));
