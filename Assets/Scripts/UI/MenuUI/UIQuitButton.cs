@@ -11,6 +11,7 @@ public class UIQuitButton : Singleton<UIQuitButton>
 
     public void Quit() 
     {
+        AudioManager.instance.PlaySelect();
         Application.Quit();
     }
 }

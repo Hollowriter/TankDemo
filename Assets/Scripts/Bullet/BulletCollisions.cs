@@ -9,6 +9,7 @@ public class BulletCollisions : MonoBehaviour
         if (other.tag == "Target") 
         {
             ScoreManager.instance.AddScore(other.gameObject.GetComponent<Sphere>().GetSphereScoreValue());
+            AudioManager.instance.PlayScore();
             other.gameObject.SetActive(false);
             this.gameObject.SetActive(false);
         }

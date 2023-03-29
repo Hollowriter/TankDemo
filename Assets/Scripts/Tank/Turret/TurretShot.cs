@@ -22,6 +22,7 @@ public class TurretShot : Singleton<TurretShot>
 	{
 		if (!bullet.activeInHierarchy && !TurretMovement.instance.IsRotating())
 		{
+			AudioManager.instance.PlayShoot();
 			bullet.SetActive(true);
 			bullet.GetComponent<Bullet>().ResetLifeTime();
 			bullet.GetComponent<Bullet>().SetPosition(this.gameObject.transform.position);

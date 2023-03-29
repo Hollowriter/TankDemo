@@ -12,6 +12,7 @@ public class UIPlayButton : Singleton<UIPlayButton>
 
     public void Play() 
     {
+        AudioManager.instance.PlaySelect();
         SceneManager.LoadScene("GameplayScene");
     }
 }
