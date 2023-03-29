@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereImpulse: 1
+  sphereScoreValue: 1
 --- !u!1 &7997108693037082811
 GameObject:
   m_ObjectHideFlags: 0

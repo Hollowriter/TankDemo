@@ -11,5 +11,12 @@ public enum SphereType
 public abstract class Sphere : MonoBehaviour
 {
     [SerializeField] protected int sphereImpulse;
+    [SerializeField] protected int sphereScoreValue;
+
     protected abstract void SphereBehaviour();
+
+    public int GetSphereScoreValue() 
+    {
+        return sphereScoreValue;
+    }
 }

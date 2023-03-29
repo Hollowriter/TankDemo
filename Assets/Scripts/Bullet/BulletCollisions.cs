@@ -8,6 +8,7 @@ public class BulletCollisions : MonoBehaviour
     {
         if (other.tag == "Target") 
         {
+            ScoreManager.instance.AddScore(other.gameObject.GetComponent<Sphere>().GetSphereScoreValue());
             other.gameObject.SetActive(false);
             this.gameObject.SetActive(false);
         }

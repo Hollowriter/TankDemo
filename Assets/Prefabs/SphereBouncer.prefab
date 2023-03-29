@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereImpulse: 8
+  sphereScoreValue: 1
   timeToJump: 2
   rb: {fileID: 7997108691968712967}
 --- !u!1 &7997108693037082811
