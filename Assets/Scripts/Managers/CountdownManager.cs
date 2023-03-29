@@ -55,6 +55,7 @@ public class CountdownManager : Singleton<CountdownManager>
 
     private void Update()
     {
-        BehaveSingleton();
+        if (!PauseManager.instance.GetPaused())
+            BehaveSingleton();
     }
 }

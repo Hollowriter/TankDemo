@@ -19,29 +19,32 @@ public class TankControls : Singleton<TankControls>
 
 	private void ReadingControls()
 	{
-		if (Input.GetKey(InputManager.instance.up))
+		if (!PauseManager.instance.GetPaused())
 		{
-			UpPressed();
-		}
-		if (Input.GetKey(InputManager.instance.down))
-		{
-			DownPressed();
-		}
-		if (Input.GetKey(InputManager.instance.right))
-		{
-			RotateRightPressed();
-		}
-		if (Input.GetKey(InputManager.instance.left))
-		{
-			RotateLeftPressed();
-		}
-		if (Input.GetKey(InputManager.instance.leftClick))
-		{
-			ShootPressed();
-		}
-		if (Input.GetKey(InputManager.instance.rightClick))
-		{
-			RotateTurretPressed();
+			if (Input.GetKey(InputManager.instance.up))
+			{
+				UpPressed();
+			}
+			if (Input.GetKey(InputManager.instance.down))
+			{
+				DownPressed();
+			}
+			if (Input.GetKey(InputManager.instance.right))
+			{
+				RotateRightPressed();
+			}
+			if (Input.GetKey(InputManager.instance.left))
+			{
+				RotateLeftPressed();
+			}
+			if (Input.GetKey(InputManager.instance.leftClick))
+			{
+				ShootPressed();
+			}
+			if (Input.GetKey(InputManager.instance.rightClick))
+			{
+				RotateTurretPressed();
+			}
 		}
 	}
 

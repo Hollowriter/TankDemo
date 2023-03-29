@@ -52,11 +52,13 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        Timer();
+        if (!PauseManager.instance.GetPaused())
+            Timer();
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if (!PauseManager.instance.GetPaused())
+            Move();
     }
 }

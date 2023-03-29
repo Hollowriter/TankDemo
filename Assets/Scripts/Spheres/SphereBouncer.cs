@@ -25,6 +25,7 @@ public class SphereBouncer : Sphere
 
     private void Update()
     {
-        SphereBehaviour();
+        if (!PauseManager.instance.GetPaused())
+            SphereBehaviour();
     }
 }
